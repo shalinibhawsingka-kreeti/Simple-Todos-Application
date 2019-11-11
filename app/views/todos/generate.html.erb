@@ -1,0 +1,13 @@
+<h5>Total completed todos are: </h5><%= @todos_completed.count %>
+<%= @todos_completed.each do |todo| %>
+    <%= todo.desc %>
+    <%= todo.date %>
+    <%= todo.status %>
+<% end %>
+
+<h5>Total uncompleted todos are: </h5><%= @todos_not_completed.count %>
+<%= @todos_not_completed.each do |todo| %>
+    <%= todo.desc %>
+    <%= todo.date %>
+    <%= todo.status %>
+<% end %>

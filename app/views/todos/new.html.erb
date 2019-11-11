@@ -1,0 +1,15 @@
+<h4> Create your todo </h4>
+
+<% if @todo.errors.any? %>
+  <% @todo.errors.full_messages do |msg| %>
+    <% msg %>
+  <% end %>
+<% end %>
+
+<%= form_for @todo do |f| %>
+  <%= f.text_field :desc, label: "Please give the description for the todo" %>
+  <%= f.date_field :date, label: "Please give a scheduled date todo" %>
+  <%= f.check_box :status, label: "Todo Completed ? " %>
+  <%= f.collection_select(:user_id, User.all, :id, :name, { :prompt => "Select your name" }) %>
+  <%= f.submit %>
+<% end %>

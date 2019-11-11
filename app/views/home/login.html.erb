@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+  <%= f.text_field :email, label: "Email: ", placeholder: "Please enter your email" %><br />
+  <%= f.password_field :password, label: "Password: ", placeholder: "Please enter your password" %><br />
+  <%= f.submit %>
+<% end %>

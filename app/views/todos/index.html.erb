@@ -1,0 +1,18 @@
+<h5>Wanna edit your personal details</h5>
+<%= link_to "Change your details", edit_user_path(@user) %>
+
+<h5>Your created todos</h5>
+<ul>
+  <%= @todos.each do |todo| %>
+    <li><%= link_to todo.desc, todo_path(todo) %></li>
+  <% end %>
+</ul>
+
+<h4>Create new todo</h4>
+<%= link_to "New todo", new_todo_path %>
+
+<h5>Generate a report of your todos</h5>
+<%= link_to "Generate Report", todos_generate_path %>
+
+<h5>Filter todos based on a certain date?</h5>
+<%= link_to "Click Here", todos_filter_path %>

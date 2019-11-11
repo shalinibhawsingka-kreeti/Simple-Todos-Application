@@ -1,0 +1,6 @@
+<%= @todo.desc %>
+<%= @todo.date %>
+<%= @todo.status %>
+<%= link_to "Edit", edit_todo_path(@todo) %>
+<%= link_to "Delete", todo_path, method: "delete", class: { data_confirm: "Are you Sure ?" } %>
+<%= link_to "Go Back", todos_path %>

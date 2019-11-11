@@ -1,0 +1,23 @@
+<h5>All dates when todos they were created are given below: </h5>
+
+<ul>
+    <%= @todos.each do |todo| %>
+        <li><%= todo.date %></li>
+    <% end %>
+</ul>
+
+<%= form_with(model: @todo, url: todos_filter_path) do |f| %>
+    <%= f.date_field :date, label: "Please give a date to see all created todos on that date" %>
+    <%= f.submit %>
+<% end %>
+
+<hr/>
+
+<h5>Todos after filtering</h5>
+<% if params[:date] %>
+    <ul>
+        <%= @todo_dates.each do |todo| %>
+            <li><%= todo.desc %></li>
+        <% end %>
+    </ul>
+<% end %>
